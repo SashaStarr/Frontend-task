@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { productsFetching, productsFetched, productsFetchingError, productDeleted } from '../../actions/actions';
 import { CircularProgress, Alert } from '@mui/material';
 import ProductsListItem from './productsListItem/ProductsListItem';
-import ModalDelete from '../modal/modalDelete/ModalDelete';
 
 const ProductsList = () => {
     // const [deleteСonfirmation, setDeleteСonfirmation] = useState(false)
@@ -13,8 +12,8 @@ const ProductsList = () => {
 
     const { request } = useHttp();
     const dispatch = useDispatch();
-    const productsLoadingStatus = useSelector(state => state.products.productsLoadingStatus)
-    const productsList = useSelector(state => state.products.products)
+    const productsLoadingStatus = useSelector(state => StaticRange.productsLoadingStatus)
+    const productsList = useSelector(state => state.products)
 
     useEffect(() => {
         productsFetching();
@@ -39,6 +38,7 @@ const ProductsList = () => {
     } else if (productsLoadingStatus === "error") {
         return <Alert severity="error">Error</Alert>
     }
+    console.log(productsList)
 
     const product = productsList.map(item => {
         const { id, ...anotherItems } = item
