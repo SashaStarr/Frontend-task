@@ -1,0 +1,44 @@
+.modal-panel{
+   display: none;
+   position: fixed;
+   top: 30%;
+   left: 30%;
+   width: 500px;
+   height: 200px;
+   background-color:antiquewhite;
+   border: 3px solid black;
+   border-radius: 10%;
+   -webkit-border-radius: 5%;
+   -moz-border-radius: 10%;
+   -ms-border-radius: 10%;
+   -o-border-radius: 10%;
+   z-index: 50;
+   justify-content: center;
+   align-items:center;
+}
+
+.modal-panel button{
+    margin: 20px;
+}
+
+button{
+   border-radius: 10%;
+   -webkit-border-radius: 10%;
+   -moz-border-radius: 10%;
+   -ms-border-radius: 10%;
+   -o-border-radius: 10%;
+}
+
+.active{
+   display:flex
+}
+
+.green-button{
+    background-color:green;
+    padding: 40px;
+}
+
+.red-button{
+    background-color:red;
+    padding: 40px;
+}
